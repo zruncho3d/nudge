@@ -4,20 +4,23 @@
 
 **tl;dr:** Manual calibration sucks, but with this probe, you can get fresh, fully-automatic offset alignment on every print.
 
-
 | ![alt_text](Renders/another_iso_crop.png) | ![alt_text](Renders/electrical_path_crop_2.png) | ![alt_text](Images/both_iso_small.jpg) |
 | - | - | - |
 
-**Nudge** is a low-cost, high-repeatability probe to enable automatic nozzle alignment on multi-toolhead 3D printers (IDEX, Dual Gantry, and Toolchanger).
+**Nudge** is a low-cost, high-repeatability probe to enable automatic nozzle alignment on multi-toolhead 3D printers (IDEX, Dual Gantry, and Toolchanger).  
 
-It’s like a Z endstop, but can be nudged in X and Y directions, too.
+It’s like a Z endstop, but can be nudged in X and Y directions, too.  
 
-When multiple heads can work together, with perfect alignment, multi-color and multi-material prints look great!  Here's a sample from Ankurv ([3DUnplugged]()), whose [Daksh v2]() toolchanger uses Nudge to ensure alignment betweeen heads:
+When the metal probe tip is nudged by the nozzle, one of the vertical button-head screws in the Wobbler lifts off slightly from the socket-head screws in the Mount, breaking the electrical path.  Software nudges the nozzle against the probe in Z, then X, and Y, repeating this process to determine offsets between any number of toolheads.
+
+When multiple heads can work together, with perfect alignment, multi-color and multi-material prints look great!  
+
+Here's a sample from Ankurv ([3DUnplugged]()), whose [Daksh v2]() toolchanger uses Nudge to ensure alignment betweeen heads:
 
 | ![](Images/bender.jpg) | ![](Images/bender_zoom.jpg) | ![](Images/bender_zoom_2.jpg) |
 | - | - | - |
 
-You can print, build, and deploy a Nudge in as little as one hour, with only $10 in parts, using the instructions in this repo, or with this video:
+You can print, build, and deploy a Nudge in as little as one hour, with only $10 in parts, using the instructions in this repo, or with this video (yes, it used to have a 'y' at the end of the name):
 
 [![](Images/yt_thumb.png)](https://youtu.be/6eRomxUo7TI)
 
@@ -59,7 +62,7 @@ Definitely usable!
 | --- | --- | --- |
 | ![](Renders/nudge_2020_rear.png) | ![](Renders/nudge_1515_high.png)  | ![](Renders/nudge_1515_low.png) |
 
-**Wobbler options**: M3 Pin, M5 Pin, M3 with internally-threaded dowel:
+**Wobbler options**: 3mm Pin, 5mm Pin, or M3 screw and internally-threaded dowel:
 ![](Renders/all_wobblers_side_trim.png)
 
 **Sound good?**  Jump to the [Instructions](INSTRUCTIONS.md) section to get started and find the printed parts to match your printer's layout; one should fit!  
