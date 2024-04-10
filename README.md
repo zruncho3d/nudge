@@ -85,7 +85,7 @@ Like what you see?  [Buy me a coffee](https://ko-fi.com/zruncho3d) to show the l
 
 - #### [BOM](BOM.md): Parts list to build your own
 - #### [Instructions](INSTRUCTIONS.md): Instructions to print, assemble, and configure
-- #### [Design](DESIGN/md): Learn about why Nudge is designed like that!
+- #### [Design](DESIGN.md): Learn about why Nudge is designed like that!
 - #### [FAQ](FAQ.md): Common questions, answered
 
 ## Support
