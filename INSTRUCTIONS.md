@@ -159,4 +159,8 @@ Congrats!  Your probe appears to work.
 
 #### Install in printer
 
-Add it and move on to configuration!  (coming soon)
+This one's on you.
+
+#### Configure software and test functionality
+
+Move on to the [Configuration](CONFIGURATION.md) section! 
