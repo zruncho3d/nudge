@@ -20,7 +20,11 @@ Here's a sample from Ankurv ([3DUnplugged]()), whose [Daksh v2]() toolchanger us
 | ![](Images/bender.jpg) | ![](Images/bender_zoom.jpg) | ![](Images/bender_zoom_2.jpg) |
 | - | - | - |
 
-You can print, build, and deploy a Nudge in as little as one hour, with only $10 in parts, using the instructions in this repo, or with this video (yes, it used to have a 'y' at the end of the name):
+You can print, build, and deploy a Nudge in as little as one hour, with only $10 in parts:
+
+![](Images/all_parts.png)
+
+Build it using the instructions in this repo, or with this video (yes, it used to have a 'y' at the end of the name):
 
 [![](Images/yt_thumb.png)](https://youtu.be/6eRomxUo7TI)
 
@@ -100,7 +104,7 @@ Find the thread in the User Projects forum channel on the DoomCube Discord and p
 
 **Enjoy!** I hope you enjoy using this as much as the beta team did bringing this to release!  
 
-Special thanks to `Caza` for critical design feedback and ideas, `Ankurv` for all-up testing,  and the beta team who helped validate the design: `Telxoid`, `Esoterical`, `SteveBuilds`, and others who provided data and feedback.
+Special thanks to `Caza` for critical design feedback and ideas, `Ankurv` for all-up testing,  and the beta team who helped validate the design: `Telxoid`, `Esoterical`, `SteveBuilds`, and others who provided data and feedback, including `Frans-Willem` who created a PR to fix this for IDEX.
 
 We made a lot of prototypes to get here.
 
