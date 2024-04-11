@@ -17,7 +17,7 @@
 * Midpiece screws
  * 3x M3x6 BHCS
    * **MUST BE CONDUCTIVE**; no black oxide or anodized ones here.
-   * Copper preferred, but stainless is OK in practice.
+   * Copper preferred [AliExpress](https://www.aliexpress.us/item/3256805885958581.html), but stainless is OK in practice.
 * Connector
   * 1x straight 2-pin JST-XH male connector, + matching crimps and housing
 * Floating and indexed bases only:
