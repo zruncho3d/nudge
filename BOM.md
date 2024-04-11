@@ -21,6 +21,6 @@
 * Connector
   * 1x straight 2-pin JST-XH male connector, + matching crimps and housing
 * Floating and indexed bases only:
- * 1.75mm TPU or equivalent-size O-ring or similar-size rubber band
- * Up to 8x additional 6mm magnets for base (can be N52), can be double-stacked
+  * 1.75mm TPU or equivalent-size O-ring or similar-size rubber band
+  * Up to 8x additional 6mm magnets for base (can be N52), can be double-stacked
 * OPTIONAL Super Glue for magnets; shouldn’t be needed if the fit is right.
