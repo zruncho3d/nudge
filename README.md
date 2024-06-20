@@ -7,11 +7,13 @@
 | ![alt_text](Renders/another_iso_crop.png) | ![alt_text](Renders/electrical_path_crop_2.png) | ![alt_text](Images/both_iso_small.jpg) |
 | - | - | - |
 
+## Nudge in action! >>>  ![alt_text](Videos/Probing.gif)
+
 **Nudge** is a low-cost, high-repeatability probe to enable automatic nozzle alignment on multi-toolhead 3D printers (IDEX, Dual Gantry, and Toolchanger).  
 
 It’s like a Z endstop, but can be nudged in X and Y directions, too.  
 
-When the metal probe tip is nudged by the nozzle, one of the vertical button-head screws in the Wobbler lifts off slightly from the socket-head screws in the Mount, breaking the electrical path.  Software nudges the nozzle against the probe in Z, then X, and Y, repeating this process to determine offsets between any number of toolheads.
+When the metal probe tip is nudged by the nozzle, a button-head screw in the Wobbler lifts off slightly from the smooth socket-head screws in the Mount, breaking the electrical path.  Software nudges the nozzle against the probe in Z, then X, and Y, repeating this process to determine offsets between any number of toolheads.
 
 When multiple heads can work together, with perfect alignment, multi-color and multi-material prints look great!  
 
@@ -20,11 +22,16 @@ Here's a sample from Ankurv ([3DUnplugged]()), whose [Daksh v2]() toolchanger us
 | ![](Images/bender.jpg) | ![](Images/bender_zoom.jpg) | ![](Images/bender_zoom_2.jpg) |
 | - | - | - |
 
+Here's a sample from Zruncho of some Voron cubes.  The full-size cube would have been perfectly aligned if the nozzle was cleaned first!
+
+| ![](Images/gems_small.jpeg) | ![](Images/cubes.jpeg) |
+| - | - |
+
 You can print, build, and deploy a Nudge in as little as one hour, with only $10 in parts:
 
 ![](Images/all_parts.png)
 
-Build it using the instructions in this repo, or with this video.  Yes, it used to have a 'y' at the end of the name.  Note also that this video is slightly out of date - for example, now, Nudge has a straight-through JST, rather than a right-angle JST.
+Build it using the instructions in this repo, or with [this video]((https://youtu.be/6eRomxUo7TI).  Yes, it used to have a 'y' at the end of the name.  Note also that this video is slightly out of date - for example, now, Nudge has a straight-through JST, rather than a right-angle JST, and plastic to ensure the horizontal screws stay aligned.
 
 [![](Images/yt_thumb.png)](https://youtu.be/6eRomxUo7TI)
 
@@ -41,16 +48,22 @@ Printing stats for y:
 --- 95.45 seconds total; 19.09 per iteration ---
 ```
 
-Definitely usable!
+Definitely usable!  Z is not quite as good, though, so you may still want to keep that endstop switch around for determining Z offsets.
 
-**Firmware Support**: Nudge combines well with [Viesturz' NozzleAlign code](https://github.com/viesturz/NozzleAlign), and other kinematics should be possible with Klipper tweaks:
+**Firmware Support**: Nudge works great on CoreXY with nozzle alignment code from [Viesturz' klipper-toolchanger](https://github.com/viesturz/klipper-toolchanger) repo, but other kinematics should be possible with Klipper tweaks.
 
 | Printer Type | Klipper Kinematics type | Test/Support Status |
 | - | - | - |
 | Toolchanger | CoreXY | :white_check_mark: |
-| IDEX | Hybrid CoreXY w/ Dual Carriage | Needs [Frans-Willem's Klipper PR](https://github.com/Klipper3d/klipper/pull/6486) |
+| IDEX | Hybrid CoreXY w/ Dual Carriage | :white_check_mark: (as of 2024-06-19) |
 | IDEX | CoreXZ Dual Carriage | :x: Fails during probing |
 | DG | Dual Gantry CoreXY | :x: Fails during probing |
+
+Related patches:
+* [RCF's klipper-toolchanger fix for IDEX](https://github.com/viesturz/klipper-toolchanger/pull/23/commits)
+* [Frans-Willem's Klipper PR for IDEX](https://github.com/Klipper3d/klipper/pull/6486)
+
+No, fully-automatic offsets are not yet supported.  If you figure this out, please share.
 
 **Hardware Support**: Mounting options for many common multi-toolhead open-source printers/mods are included here, including Trident, Tridex, Tri-Zero, Double Dragon, Dueling Zero, V2, Micron, F-Zero, and more.  One almost certainly fits!  *Unlike other options, a Nudge can be permanently mounted within a hot chamber, with as little as 6mm overtravel.*
 
@@ -96,17 +109,29 @@ Like what you see?  [Buy me a coffee](https://ko-fi.com/zruncho3d) to show the l
 - #### [Design](DESIGN.md): Learn about why Nudge is designed like that!
 - #### [FAQ](FAQ.md): Common questions, answered
 
+## Troubleshooting
+
+**Probe not returning to center?** Magnet force may be insufficient, especially with heavier 5mm pins.  You can easily increase magnet force by cutting the screw towers and aligning the BHCSes to decrease magnet distance.  You can also just push the magnets out slightly for the same effect.  Worst-case use stronger magnets.
+
+**Probe triggered early?** Increase `spread`, improve the initial alignment accuracy, or add travel (by moving the bed or sensor).
+
+**Probe triggering unreliably?** Check each pair of screws with a multimeter.  After a few heat cycles, you will probably need to tighten the SHCSes, as the plastic likes to relax a bit.
+
+**High result variation?** Check the rigidity of the mount and be absolutely sure
+
+**Unsatisfied with Z repeatability?** Z is just not as good, due to the design.  You can keep your original endstop and wire it inline with the original Z endstop, or you can flip the Nudge upside down and change the config to use Tap/Boop etc for the Z probing.
+
 ## Support
 
-Find the thread in the User Projects forum channel on the DoomCube Discord and post there.
+Find the thread in the User Projects forum channel on the [DoomCube Discord](https://discord.gg/doomcube) and post there.
 
 ## Credits
 
 **Enjoy!** I hope you enjoy using this as much as the beta team did bringing this to release!  
 
-Special thanks to `Caza` for critical design feedback and ideas, `Ankurv` for all-up testing,  and the beta team who helped validate the design: `Telxoid`, `Esoterical`, `SteveBuilds`, and others who provided data and feedback, including `Frans-Willem` who created a PR to fix this for IDEX.
+Special thanks to `Caza` for critical design feedback and ideas, `Ankurv` for all-up testing,  and the beta team who helped validate the design: `Telxoid`, `Esoterical`, `SteveBuilds`, and others who provided data and feedback, including `RCF` and `Frans-Willem`, who created a PRs for IDEX.
 
-We made a lot of prototypes to get here.
+We made a lot of prototypes and test articles to get here.
 
 ![alt_text](Images/prototypes.jpg)
 
