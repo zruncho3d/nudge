@@ -149,9 +149,21 @@ To prevent stripping the formed threads, DON’T use the long side of an allen w
 
 #### Basic electrical checkout
 
-First, configure the Nudge as an endstop.  Connect up the probe to the Z endstop or Tap endstop port.
+Here's a cool way to test the probe in Klipper, as a "filament sensor".
 
-In your web interface for Klipper, query the endstop value to confirm connectivity.  Tap the probe with your finger to knock it off-position slightly; the value should change.  Then have it return to center and ensure that it registers nothing.  Do this 5 times to be sure.
+Add this to your `printer.cfg`, and make sure to update the pins.
+```
+[duplicate_pin_override]
+pins: head1:PB12
+
+[filament_switch_sensor head1_attached]
+switch_pin: head1:PB12
+pause_on_runout: false
+```
+
+Restart Klipper.
+
+In your web interface for Klipper, look at the filament value; at least with Mainsail, it'll update automatically!  Tap the probe with your finger to knock it off-position slightly; the value should change.  Then have it return to center and ensure that it registers nothing.  Do this 5 times to be sure.
 
 Switch back to the original port if needed.
 
@@ -163,4 +175,4 @@ This one's on you.
 
 #### Configure software and test functionality
 
-Move on to the [Configuration](CONFIGURATION.md) section! 
+Move on to the [Configuration](CONFIGURATION.md) section!
