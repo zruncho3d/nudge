@@ -135,7 +135,7 @@ We made a lot of prototypes and test articles to get here.
 
 ![alt_text](Images/prototypes.jpg)
 
-It's 60+ and this isn't even all of then.
+It's 60+ and this isn't even all of them.
 
 Thanks also to [Fabreeko](https://www.fabreeko.com/) for supporting this build!  Without HoneyBadger rails, the test gantry would not have happened, and Nudge would not have been as good.  Support vendors like this, which support open-source dev, whenever you can.
 
