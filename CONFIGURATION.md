@@ -136,7 +136,7 @@ gcode:
     #   [1] for IDEX or Dual Gantry.
     {% for tool in [1] %}
         T{tool}
-        M109 S150
+        M109 T{tool} S150
         NUDGE_MOVE_OVER_PROBE
         TOOL_CALIBRATE_TOOL_OFFSET
         M104 S0
