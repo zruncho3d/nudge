@@ -128,9 +128,9 @@ gcode:
 [gcode_macro NUDGE_FIND_TOOL_OFFSETS]
 gcode:
     T0
-    M109 S150  # Heat up as much as possible without oozing to account for any thermal deformations
+    M109 T0 S150  # Heat up as much as possible without oozing to account for any thermal deformations
     NUDGE_FIND_TOOL_OFFSET
-    M104 S0
+    M104 T0 S0
     # Match your number of tools:
     #   [1, 2, 3] for a 4-head toolchanger.
     #   [1] for IDEX or Dual Gantry.
@@ -139,7 +139,7 @@ gcode:
         M109 T{tool} S150
         NUDGE_MOVE_OVER_PROBE
         TOOL_CALIBRATE_TOOL_OFFSET
-        M104 S0
+        M104 T{tool} S0
     {% endfor %}
 ```
 
