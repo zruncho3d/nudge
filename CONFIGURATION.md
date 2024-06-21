@@ -129,7 +129,7 @@ gcode:
 gcode:
     T0
     M109 S150  # Heat up as much as possible without oozing to account for any thermal deformations
-    NUDGE_MOVE_OVER_PROBE
+    NUDGE_FIND_TOOL_OFFSET
     M104 S0
     # Match your number of tools:
     #   [1, 2, 3] for a 4-head toolchanger.
