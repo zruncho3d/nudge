@@ -44,7 +44,8 @@ Add the `calibrate_offsets.cfg` sample below, read the comments, and make sure y
 # These two values should be changed or checked.
 #
 # 'pin' should reference the pin used for Nudge.
-pin: z:PC0
+# Add a pull-up resistor because this is like an endstop.
+pin: ^z:PC0
 # 'spread' is the amount of X or Y motion used in the probing sequence.
 # Think of it as the clearance from the center, to accomodate the pin's diameter and any
 # initial starting-point inaccuracy.
